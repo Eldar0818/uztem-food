@@ -1,0 +1,47 @@
+.showtype{
+    width: 100%;
+    padding: 25px 0;
+    position: relative;
+}
+
+.showtype h2{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+.typebox{
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    justify-items: center;
+}
+
+.imgbox{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid orangered;
+    margin-bottom: 10px;
+}
+
+.typetitle{
+    text-align: center;
+    font-size: 25px;
+    color: orange;
+}
+
+@media screen and (max-width: 910px) {
+    .typebox{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 538px) {
+    .typebox{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,179 @@
+.navbar{
+    position: sticky;
+    z-index: 999;
+    width: 100%;
+}
+
+.navtop{
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navtopremider{
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 1.1px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.loginicon{
+    color: #fff;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.login span{
+    font-size: 18px;
+    color: #fff;
+}
+
+.navbottom{
+    width: 100%;
+    background-color: orangered;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    flex: 3;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logotext{
+    margin-left: 10px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.navlinks{
+    flex: 6;
+    display: flex;
+    align-items: center;
+}
+
+.navlink{
+    margin: 0 15px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbtns{
+    flex: 3;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navcart{
+    flex: 3;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.carticon{
+    color: #fff;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.counter{
+    font-size: 15px;
+    padding: 2.5px 5px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.burgermenu{
+    display: none;
+    color: #fff;
+    font-size: 25px;
+    margin: 0 5px 0 15px;
+    cursor: pointer;
+}
+
+.menucard{
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.menucardclicked{
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.closebtn{
+    padding: 15px;
+}
+
+.menuitems{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.menuitems h5{
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menuitems h5:hover{
+    text-decoration: underline;
+}
+
+.menuremind{
+    padding: 10px;
+    color: orange;
+}
+
+@media screen and (max-width: 600px) {
+    .navbottom{
+        padding: 10px;
+    }
+    .navlinks{
+        display: none;
+    }
+
+    .burgermenu{
+        display: block;
+    }
+
+    .navtopremider{
+        display: none;
+    }
+}
