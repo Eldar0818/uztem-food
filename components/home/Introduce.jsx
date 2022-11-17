@@ -4,7 +4,7 @@ import styles from '../../styles/home/introduce.module.css'
 
 const Introduce = () => {
   return (
-    <div className={styles.intro}>
+    <div className={styles.intro} id="about">
         <div className={styles.introbg}>
             <Image 
                 src="/assets/introbg.jpg" 

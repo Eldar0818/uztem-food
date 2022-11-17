@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/home/interacting.module.css'
 import { MdDeliveryDining } from 'react-icons/md'
+import Link from 'next/link'
 
 const CustomerInteracting = () => {
 
@@ -13,7 +14,9 @@ const CustomerInteracting = () => {
             <h2>Fest Delivery</h2>
             <p>Order online easily.</p>
             <p>Delicious meal is comming to your home.</p>
-            <button className={styles.oredrbtn}>Order Now</button>
+            <Link href="/ordernow">
+              <button className={styles.oredrbtn}>Order Now</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -31,7 +34,7 @@ const CustomerInteracting = () => {
               <option value="four person">Four person</option>
               <option value="more">More</option>
             </select>
-            <button type='submit'>Book  a table</button>
+            <button type='submit'>Book a table</button>
           </form>
         </div>
       </div>

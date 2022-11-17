@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/home/Hero.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -18,7 +19,9 @@ const Hero = () => {
                 <div className={styles.herocontents}>
                     <h2 className={styles.herocontenttop}>THE REAL DEAL</h2>
                     <h2 className={styles.herocontentbottom}>ON UYGHUR FOOD</h2>
-                    <button className={styles.herobtn}>Order Now</button>
+                    <Link href="/ordernow">
+                        <button className={styles.herobtn}>Order Now</button>
+                    </Link>
                 </div>
             </div>
         </div>

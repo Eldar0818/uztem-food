@@ -4,10 +4,17 @@ import styles from '../styles/Navbar.module.css'
 import { FaRegUserCircle, FaRegTimesCircle } from 'react-icons/fa'
 import { BsBasket2Fill } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
 
     const [clickMenu, setClickMenu] = useState(false)
+    const router = useRouter()
+
+    const handleChangeRoute = () => {
+        router.push('/')
+    }
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -28,21 +35,31 @@ const Navbar = () => {
             </div>
         </section>
         <section className={styles.navbottom}>
-            <div className={styles.logo}>
-                <Image 
-                    src="/assets/logo.jpg" 
-                    width="45" 
-                    height="45" 
-                    alt="logo" 
-                    style={{ borderRadius: '50%' }}
-                />
-                <h3 className={styles.logotext}>UzTem</h3>
-            </div>
+                <div className={styles.logo}>
+            <Link href="/">
+                    <Image 
+                        src="/assets/logo.jpg" 
+                        width="45" 
+                        height="45" 
+                        alt="logo" 
+                        style={{ borderRadius: '50%' }}
+                    />
+            </Link>
+            <Link href="/">
+                    <h3 className={styles.logotext}>UzTem</h3>
+            </Link>
+                </div>
             <div className={styles.navmenu}>
                 <div className={styles.navlinks}>
-                    <span className={styles.navlink}>About</span>
-                    <span className={styles.navlink}>Menu</span>
-                    <span className={styles.navlink}>Contact</span>
+                    <a href="#about" onClick={handleChangeRoute}>
+                        <span className={styles.navlink}>About</span>
+                    </a>
+                    <Link href="/menu">
+                        <span className={styles.navlink}>Menu</span>
+                    </Link>
+                    <a href="#contact">
+                        <span className={styles.navlink}>Contact</span>
+                    </a>
                 </div>
             </div>
             <div className={styles.navbtns}>
@@ -65,9 +82,15 @@ const Navbar = () => {
                 />
             </div>
             <div className={styles.menuitems}>
-                <h5 className={styles.menuitem}>About</h5>
-                <h5 className={styles.menuitem}>Menu</h5>
-                <h5 className={styles.menuitem}>Contact</h5>
+                <a href="#about">
+                    <h5 className={styles.menuitem} onClick={handleChangeRoute}>About</h5>
+                </a>
+                <Link href="/menu">
+                    <h5 className={styles.menuitem}>Menu</h5>
+                </Link>
+                <a href="#contact">
+                    <h5 className={styles.menuitem}>Contact</h5>
+                </a>
             </div>
             <p className={styles.menuremind}>Online order - Free delivery</p>
         </div>

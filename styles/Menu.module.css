@@ -1,0 +1,82 @@
+.menupage{
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.foodmenu{
+    max-width: 768px;
+    width: 100%;
+    min-height: 600px;
+    padding: 15px 10px;
+    background-color: orange;
+    border-radius: 15px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.ordernowbtn{
+    padding: 10px;
+    align-self: flex-end;
+}
+.ordernowbtn button{
+    width: 150px;
+    height: 40px;
+    background-color: orangered;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.foodmenutitle{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 1.1px;
+}
+
+.typegroup{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.typegoupheading{
+    font-size: 25px;
+    letter-spacing: 1.1px;
+    font-weight: 300;
+}
+
+.underline{
+    width: 150px;
+    border-bottom: 2px solid #fff;
+    margin: 15px 0;
+}
+
+.preoducts{
+    width: 100%;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+@media screen and (max-width: 350px) {
+    .preoducts{
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+
+.product h4{
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    font-size: 18px;
+}
+
+.prices{
+    padding: 10px 0;
+}
