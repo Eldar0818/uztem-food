@@ -1,35 +1,40 @@
 {
     "meals": [
         {
-            "id": 1,
+            "id": "1",
+            "type": "meal",
             "name": "ASHPOLO",
             "price": [89, 109, 129],
             "desc": "The recipe can be a challenge to cook correctly at first, but the challenge will prove well worth the effort because it is absolutely delicious.",
             "image": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_73,w_860,ar_3:2/v1/img/recipes/41/18/49/picXBzfax.jpg"
         },
         {
-            "id": 2,
+            "id": "2",
+            "type": "meal",
             "name": "LEGHMEN",
             "price": [69, 89, 109],
             "desc": "The long, thin noodles are generally served with fried lamb and fried seasonal vegetables.",
             "image": "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/86/5d/28/dolan-uyghur-food-heaven.jpg"
         },
         {
-            "id": 3,
+            "id": "3",
+            "type": "meal",
             "name": "BIG PLATE CHICKEN",
             "price": [119, 149, 179],
             "desc": "It combines an entire chicken with potatoes, fresh peppers and seasoned with dried chili peppers, served with noodle.",
             "image": "https://images.squarespace-cdn.com/content/v1/5dbed7c49598ba519f1f8ae0/1596636734338-PFA8OWHG96ZFT243FGVZ/Uyghur+food+dapanji+big+plate+chicken-2.jpg?format=500w"
         },
         {
-            "id": 4,
+            "id": "4",
+            "type": "meal",
             "name": "SUYKASH",
             "price": [69, 89, 109],
             "desc": "Uyghur Suykash or Minestrone soup is a very special and popular hand- made homemade fresh pasta soup.",
             "image": "https://images.squarespace-cdn.com/content/v1/5dbed7c49598ba519f1f8ae0/1597787957958-PW6KZ20ERLPM7O54A9BV/uyghur+food+Suykash.jpg?format=500w"
         },
         {
-            "id": 5,
+            "id": "5",
+            "type": "meal",
             "name": "LAMB RIBS",
             "price": [119, 149, 179],
             "desc": "About the meat, the fresher and younger the lamb is, the most tender and tasty the meat will be.",
@@ -38,21 +43,24 @@
     ],
     "side": [
         {
-            "id": 1.1,
+            "id": "1.1",
+            "type": "side",
             "name": "KAWAP",
             "price": [10],
             "desc": "They're seasoned with peppers, cumin and garnished with desired ingredients such as onion and egg.",
             "image": "https://i.pinimg.com/originals/5f/9a/6d/5f9a6df3cdbd9da2f8303067aab5ca72.jpg"
         },
         {
-            "id": 1.2,
+            "id": "1.2",
+            "type": "side",
             "name": "SAMSA",
             "price": [6],
             "desc": "Samsa is a Tandoor (Tannur/Tannour) cooked dish which is usually made of a slightly salty dough that contains a filling of lamb and onion.",
             "image": "https://images.squarespace-cdn.com/content/v1/5dbed7c49598ba519f1f8ae0/1597827443585-E9G8YM882T61U52V54II/uyghur+food+Samsa-10.jpg?format=500w"
         },
         {
-            "id": 1.3,
+            "id": "1.3",
+            "type": "side",
             "name": "Tofu Recipe & Cucumber Salad",
             "price": [28],
             "desc": "Fried Tofu, spinach, which are full of nutrition and cucumber salad, which help hydrate your body and soul. ",
@@ -61,21 +69,24 @@
     ],
     "deserts": [
         {
-            "id": 2.1,
+            "id": "2.1",
+            "type": "desert",
             "name": "PICHENE",
             "price": [25],
             "desc": "it's a very simple and incredibly delicious treat with few ingredients and easy homemade, handmade recipe.",
             "image": "https://images.squarespace-cdn.com/content/v1/5dbed7c49598ba519f1f8ae0/1597923558414-I8PQDFE5SUCRBSEBOWKS/uyghur+food+Uyghur+Cookie.jpg?format=750w"
         },
         {
-            "id": 2.2,
+            "id": "2.2",
+            "type": "desert",
             "name": "BAKKALI",
             "price": [55],
             "desc": "This sweet, nutty and yummy dessert is one of the main deserts whenever you have a festivals and parties!!",
             "image": "https://images.squarespace-cdn.com/content/v1/5dbed7c49598ba519f1f8ae0/1598267940804-9N6L3OKEHRWJURNCS9XT/uyghur+food+walnut+cake+recipe?format=500w"
         },
         {
-            "id": 2.3,
+            "id": "2.3",
+            "type": "desert",
             "name": "TWISTED DOUGHNUT",
             "price": [20],
             "desc": "Twisted doughnuts are eaten as snack and sometimes we combine it with milk tea, soups or salads. ",
@@ -84,51 +95,58 @@
     ],
     "drinks": [
         {
-            "id": 3.1,
+            "id": "3.1",
+            "type": "drink",
             "name": "Coca Cola",
-            "price": [16, 26],
+            "price": [12, 18, 23],
             "desc": "Original / Diet Cock Small / Large cup",
             "image": "https://seeklogo.com/images/C/Coca_Cola-logo-B273610DCE-seeklogo.com.png"
         },
         {
-            "id": 3.2,
+            "id": "3.2",
+            "type": "drink",
             "name": "Pepsi Cola",
-            "price": [16, 26],
+            "price": [12, 18, 23],
             "desc": "Original / Diet Pepsi Small / Large cup",
             "image": "https://www.freeiconspng.com/uploads/pepsi-cola-logos-7.jpg"
         },
         {
-            "id": 3.3,
+            "id": "3.3",
+            "type": "drink",
             "name": "Fanta",
-            "price": [16, 26],
+            "price": [12, 18, 23],
             "desc": "Cold Orange Juice - Fanta",
             "image": "https://assets.turbologo.com/blog/en/2020/02/19084623/Fanta-logo.png"
         },
         {
-            "id": 3.4,
+            "id": "3.4",
+            "type": "drink",
             "name": "Dark Coffee",
-            "price": [24, 36],
+            "price": [12, 18, 23],
             "desc": "Hot Black Coffee -pulling shots and foaming milk best feeling",
             "image": "https://www.mensjournal.com/wp-content/uploads/mf/1280-cup-coffee.jpg?w=900&h=506&crop=1&quality=86&strip=all"
         },
         {
-            "id": 3.5,
+            "id": "3.5",
+            "type": "drink",
             "name": "Cappuccino",
-            "price": [17, 24],
+            "price": [12, 18, 23],
             "desc": "In Italian, cappuccino means 'little cap', which aptly describes the head of foamed milk that sits atop the drink's espresso base.",
             "image": "https://www.thespruceeats.com/thmb/czCYLXt4TB0tMio07BLYG5C94So=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/how-to-make-cappuccinos-766116-hero-01-a754d567739b4ee0b209305138ecb996.jpg"
         },
         {
-            "id": 3.6,
+            "id": "3.6",
+            "type": "drink",
             "name": "Earl Grey tea",
-            "price": [15, 20],
+            "price": [12, 18, 23],
             "desc": "Best choice for great time after meal, enjoying delicious grey tea with some deserts.",
             "image": "https://images.squarespace-cdn.com/content/v1/58e2565f1b631bf0ffe63b51/1573509096421-FESWUXLGVIFK7AEB0V7C/blue-flower-earl-grey-signature-blend-black-whole-leaf-loose-mem-tea-itw2-2019a.jpg?format=1000w"
         },
         {
-            "id": 3.7,
+            "id": "3.7",
+            "type": "drink",
             "name": "Green tea",
-            "price": [15, 20],
+            "price": [12, 18, 23],
             "desc": "Green tea is touted to be one of the healthiest beverages on the planet. It’s loaded with antioxidants that have many health benefits.",
             "image": "https://hips.hearstapps.com/hmg-prod/images/green-tea-wight-loss-1643990040.jpg?crop=0.665xw:1.00xh;0.291xw,0&resize=640:*"
         }

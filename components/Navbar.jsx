@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import React, { useEffect, useState } from 'react'
 import styles from '../styles/Navbar.module.css'
 import { FaRegUserCircle, FaRegTimesCircle } from 'react-icons/fa'
@@ -64,8 +64,10 @@ const Navbar = () => {
             </div>
             <div className={styles.navbtns}>
                 <div className={styles.navcart}>
-                    <BsBasket2Fill className={styles.carticon} />
-                    <span className={styles.counter}>2</span>
+                    <Link href="/cart" style={{display: 'flex', alignItems: 'center'}}>
+                        <BsBasket2Fill className={styles.carticon} />
+                        <span className={styles.counter}>2</span>
+                    </Link>
                 </div>
                 <GiHamburgerMenu 
                     className={styles.burgermenu}

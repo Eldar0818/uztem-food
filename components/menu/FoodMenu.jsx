@@ -68,7 +68,7 @@ const FoodMenu = ({ data }) => {
                     {/* type of products */}
                     {/* type of products */}
                     <div className={styles.typegroup}>
-                        <h3 className={styles.typegoupheading}>Desert:</h3>
+                        <h3 className={styles.typegoupheading}>Drinks:</h3>
                         <div className={styles.underline} />
                         <div className={styles.preoducts}>
                             {
@@ -77,7 +77,7 @@ const FoodMenu = ({ data }) => {
                                         <h4>{item.name}</h4>
                                         <div className={styles.prices}>
                                             {item.price.map((cost, index)=> (
-                                                <span key={index}>{cost} kr/ pies </span>
+                                                <span key={index}>{cost} kr/ cup </span>
                                             ))}
                                         </div>
                                     </div>

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
 import React from 'react'
 import styles from '../../styles/home/Showtype.module.css'
@@ -17,7 +17,7 @@ const ShowType = () => {
         <div className={styles.typebox}>
            {
             types.map(type=> (
-                <Link href={type} key={type.id}>
+                <Link href={type.hrefUrl} key={type.id}>
                     <div>
                         <div className={styles.imgbox}>
                             <Image 
