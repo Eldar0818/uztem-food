@@ -67,10 +67,10 @@
             "image": "https://images.squarespace-cdn.com/content/v1/5dbed7c49598ba519f1f8ae0/1597788487187-SPXA89CRND2ZK5VQ3L9R/uyghur+food+Tofu-4.jpg?format=500w"
         }
     ],
-    "deserts": [
+    "desserts": [
         {
             "id": "2.1",
-            "type": "desert",
+            "type": "dessert",
             "name": "PICHENE",
             "price": [25],
             "desc": "it's a very simple and incredibly delicious treat with few ingredients and easy homemade, handmade recipe.",
@@ -78,7 +78,7 @@
         },
         {
             "id": "2.2",
-            "type": "desert",
+            "type": "dessert",
             "name": "BAKKALI",
             "price": [55],
             "desc": "This sweet, nutty and yummy dessert is one of the main deserts whenever you have a festivals and parties!!",
@@ -86,7 +86,7 @@
         },
         {
             "id": "2.3",
-            "type": "desert",
+            "type": "dessert",
             "name": "TWISTED DOUGHNUT",
             "price": [20],
             "desc": "Twisted doughnuts are eaten as snack and sometimes we combine it with milk tea, soups or salads. ",

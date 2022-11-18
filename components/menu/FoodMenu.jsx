@@ -48,11 +48,11 @@ const FoodMenu = ({ data }) => {
                     {/* type of products */}
                     {/* type of products */}
                     <div className={styles.typegroup}>
-                        <h3 className={styles.typegoupheading}>Desert:</h3>
+                        <h3 className={styles.typegoupheading}>Dessert:</h3>
                         <div className={styles.underline} />
                         <div className={styles.preoducts}>
                             {
-                                data.deserts.map(item=> (
+                                data.desserts.map(item=> (
                                     <div key={item.id} className={styles.product}>
                                         <h4>{item.name}</h4>
                                         <div className={styles.prices}>

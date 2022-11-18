@@ -8,7 +8,7 @@ const ShowType = () => {
     const types = [
         {id:1, image: '/assets/types03.png', title: 'Meals & Dishes', hrefUrl: '/ordernow/dishes'},
         {id:2, image: '/assets/types02.jpg', title: 'Drinks', hrefUrl: '/ordernow/drinks'},
-        {id:3, image: '/assets/types01.png', title: 'Deserts', hrefUrl: '/ordernow/deserts'},
+        {id:3, image: '/assets/types01.png', title: 'Desserts', hrefUrl: '/ordernow/desserts'},
     ]
 
   return (

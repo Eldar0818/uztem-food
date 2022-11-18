@@ -17,7 +17,7 @@ const Deserts = () => {
         <header className={styles.ordernowintro}>
           <h3>Delicious Meals Waiting For Your Order!</h3>
         </header>
-        <OrdersList headerText="Deserts" itemsList={data.deserts} />   
+        <OrdersList headerText="Deserts" itemsList={data.desserts} />   
       </section>
     </div>
   )

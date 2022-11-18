@@ -20,7 +20,7 @@ const OrderNow = () => {
 
        <OrdersList headerText="Meals" itemsList={data.meals} />        
        <OrdersList headerText="Side Meals" itemsList={data.side} />        
-       <OrdersList headerText="Deserts" itemsList={data.deserts} />        
+       <OrdersList headerText="Deserts" itemsList={data.desserts} />        
        <OrdersList headerText="Drinks" itemsList={data.drinks} />
 
       </section>
