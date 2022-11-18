@@ -150,5 +150,42 @@
             "desc": "Green tea is touted to be one of the healthiest beverages on the planet. It’s loaded with antioxidants that have many health benefits.",
             "image": "https://hips.hearstapps.com/hmg-prod/images/green-tea-wight-loss-1643990040.jpg?crop=0.665xw:1.00xh;0.291xw,0&resize=640:*"
         }
+    ],
+    "itemsInCart": [
+        {
+            "id": "1a",
+            "type": "meal",
+            "name": "LEGHMEN",
+            "price": 109,
+            "desc": "The long, thin noodles are generally served with fried lamb and fried seasonal vegetables.",
+            "image": "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/86/5d/28/dolan-uyghur-food-heaven.jpg",
+            "quantity": 1
+        },
+        {
+            "id": "2a",
+            "type": "side",
+            "name": "KAWAP",
+            "price": 10,
+            "desc": "They're seasoned with peppers, cumin and garnished with desired ingredients such as onion and egg.",
+            "image": "https://i.pinimg.com/originals/5f/9a/6d/5f9a6df3cdbd9da2f8303067aab5ca72.jpg",
+            "quantity": 5
+        },
+        {
+            "id": "3a",
+            "type": "drink",
+            "name": "Dark Coffee",
+            "price": 18,
+            "desc": "Hot Black Coffee -pulling shots and foaming milk best feeling",
+            "image": "https://www.mensjournal.com/wp-content/uploads/mf/1280-cup-coffee.jpg?w=900&h=506&crop=1&quality=86&strip=all",
+            "quantity": 1
+        }
+    ],
+    "yourOrders": [
+        {
+            "orderId": "f107c2b",
+            "customer": "John Doe",
+            "address": "Torgväg 8, 163 51 Spånga",
+            "total": 177
+        }
     ]
 }

@@ -1,0 +1,58 @@
+.orderspage{
+    width: 100%;
+    min-height: calc(100vh - 300px);
+    padding: 50px;
+}
+
+.orderbox{
+    width: 100%;
+}
+
+.orderbox table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 10px 15px;
+}
+
+.orderbox table thead tr{
+    border-bottom: 1px solid #d9d9d9;
+}
+.orderbox table tbody tr td{
+    text-align: center;
+}
+
+.statusbox{
+    margin: 25px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.statusbox span{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.uncomplete{
+    color: #7c7c7c;
+}
+
+.inprogress{
+    color: orangered;
+    text-decoration: underline;
+    animation: inProgress 1s ease infinite alternate;
+}
+
+@keyframes inProgress {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.complete{
+    color: lightgreen;
+}
