@@ -11,7 +11,7 @@ const OrdersList = ({headerText, itemsList}) => {
           </div>
           <div className={styles.itemcardbox}>
             {itemsList.map(product=> (
-              <ItemCard key={product.id} product={product}/>
+              <ItemCard key={product._id} product={product}/>
             ))}
           </div>
         </div>

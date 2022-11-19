@@ -5,7 +5,7 @@ import styles from '../../styles/ordernow/ordernow.module.css'
 
 const ItemCard = ({product}) => {
   return (
-    <Link href={`/product/${product.id}`} className={styles.itemlink}>
+    <Link href={`/product/${product._id}`} className={styles.itemlink} passHref>
         <div className={styles.itemcard}>
             <div className={styles.cardleft}>
                 <p className={styles.itemname}>{product.name}</p>

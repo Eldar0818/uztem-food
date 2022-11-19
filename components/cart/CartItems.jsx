@@ -21,7 +21,7 @@ const CartItems = ({items}) => {
                     <tr key={item.id}>
                         <td>
                             <Image
-                                src={item.image}
+                                src="/assets/sizeicon.png"
                                 alt={item.name}
                                 width={85}
                                 height={85}

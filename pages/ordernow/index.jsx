@@ -1,10 +1,16 @@
 import Head from 'next/head'
 import React from 'react'
-import data from '../../components/dummyProducts.json'
 import OrdersList from '../../components/ordernow/OrdersList'
 import styles from '../../styles/ordernow/ordernow.module.css'
+import { getAllProducts } from '../../util/baseUrl'
 
-const OrderNow = () => {
+const OrderNow = ({ productsList }) => {
+
+  const meals = productsList?.filter(product=> product.type === "meal")
+  const sideMeals = productsList?.filter(product=> product.type === "side")
+  const desserts = productsList?.filter(product=> product.type === "dessert")
+  const drinks = productsList?.filter(product=> product.type === "drink")
+
   return (
     <div>
      <Head>
@@ -18,14 +24,23 @@ const OrderNow = () => {
           <h3>Delicious Meals Waiting For Your Order!</h3>
         </header>
 
-       <OrdersList headerText="Meals" itemsList={data.meals} />        
-       <OrdersList headerText="Side Meals" itemsList={data.side} />        
-       <OrdersList headerText="Deserts" itemsList={data.desserts} />        
-       <OrdersList headerText="Drinks" itemsList={data.drinks} />
+       <OrdersList headerText="Meals" itemsList={meals} />        
+       <OrdersList headerText="Side Meals" itemsList={sideMeals} />        
+       <OrdersList headerText="Deserts" itemsList={desserts} />        
+       <OrdersList headerText="Drinks" itemsList={drinks} />
 
       </section>
     </div>
   )
+}
+
+export async function getServerSideProps(){
+  const response = await getAllProducts()
+  return{
+    props:{
+      productsList: response.data
+    }
+  }
 }
 
 export default OrderNow
