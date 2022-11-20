@@ -6,11 +6,13 @@ import { BsBasket2Fill } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
 
     const [clickMenu, setClickMenu] = useState(false)
     const router = useRouter()
+    const itemsNumber = useSelector(state => state.cart.itemsNumber)
 
     const handleChangeRoute = () => {
         router.push('/')
@@ -66,7 +68,7 @@ const Navbar = () => {
                 <div className={styles.navcart}>
                     <Link href="/cart" style={{display: 'flex', alignItems: 'center'}}>
                         <BsBasket2Fill className={styles.carticon} />
-                        <span className={styles.counter}>2</span>
+                        <span className={styles.counter}>{itemsNumber}</span>
                     </Link>
                 </div>
                 <GiHamburgerMenu 

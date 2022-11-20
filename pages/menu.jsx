@@ -1,10 +1,10 @@
 import Head from "next/head";
 import styles from '../styles/Menu.module.css'
-import data from '../components/dummyProducts.json'
 import Link from "next/link";
 import FoodMenu from "../components/menu/FoodMenu";
+import { getAllProducts } from "../util/baseUrl";
 
-export default function Menu () {
+export default function Menu ({ allProducts }) {
     return(
         <div>
             <Head>
@@ -16,8 +16,17 @@ export default function Menu () {
                 <Link href="/ordernow" className={styles.ordernowbtn}>
                     <button>Order Now</button>
                 </Link>
-                <FoodMenu data={data}/>
+                <FoodMenu data={allProducts}/>
             </div>
         </div>
     )
 }
+
+export async function getServerSideProps(){
+    const response = await getAllProducts()
+    return{
+      props:{
+        allProducts: response.data
+      }
+    }
+  }

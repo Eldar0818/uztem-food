@@ -3,7 +3,7 @@ import styles from '../../styles/Menu.module.css'
 
 const FoodMenu = ({ data }) => { 
   return (
-            <div className={styles.foodmenu}>
+            <div className={styles.foodmenu} key={data._id}>
                     <h2 className={styles.foodmenutitle}>*OUR MENU*</h2>
 
                     {/* type of products */}
@@ -12,7 +12,7 @@ const FoodMenu = ({ data }) => {
                         <div className={styles.underline} />
                         <div className={styles.preoducts}>
                             {
-                                data.meals.map(item=> (
+                                data?.filter(item=> item.type === "meal").map(item=> (
                                     <div key={item.id} className={styles.product}>
                                         <h4>{item.name}</h4>
                                         <div className={styles.prices}>
@@ -32,7 +32,7 @@ const FoodMenu = ({ data }) => {
                         <div className={styles.underline} />
                         <div className={styles.preoducts}>
                             {
-                                data.side.map(item=> (
+                                data?.filter(item=> item.type === "side").map(item=> (
                                     <div key={item.id} className={styles.product}>
                                         <h4>{item.name}</h4>
                                         <div className={styles.prices}>
@@ -52,7 +52,7 @@ const FoodMenu = ({ data }) => {
                         <div className={styles.underline} />
                         <div className={styles.preoducts}>
                             {
-                                data.desserts.map(item=> (
+                                data?.filter(item=> item.type === "dessert").map(item=> (
                                     <div key={item.id} className={styles.product}>
                                         <h4>{item.name}</h4>
                                         <div className={styles.prices}>
@@ -72,7 +72,7 @@ const FoodMenu = ({ data }) => {
                         <div className={styles.underline} />
                         <div className={styles.preoducts}>
                             {
-                                data.drinks.map(item=> (
+                               data?.filter(item=> item.type === "drink").map(item=> (
                                     <div key={item.id} className={styles.product}>
                                         <h4>{item.name}</h4>
                                         <div className={styles.prices}>

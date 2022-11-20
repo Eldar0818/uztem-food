@@ -4,11 +4,20 @@ import Image from 'next/legacy/image'
 import SizeOfMeal from '../../components/product/SizeOfMeal'
 import SizeOfDrink from '../../components/product/SizeOfDrink'
 import { getSingleProduct } from '../../util/baseUrl'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../redux/cartSlice'
 
 const Product = ({ targetProduct }) => {
 
     const [quantity, setQuantity] = useState(1)
     const [count, setCount] = useState(1)
+    const price = targetProduct.price.map(item=> item)[count - 1] * quantity
+
+    const dispatch = useDispatch()
+
+    const handleAddCartBtn = () => {
+      dispatch(addProduct({...targetProduct, price, quantity, count}))
+    }
 
   return (
     <div className={styles.productpage}>
@@ -25,7 +34,7 @@ const Product = ({ targetProduct }) => {
         </div>
         <div className={styles.productright}>
             <h4>{targetProduct.name}</h4>
-            <h2>{targetProduct.price.map(item=> item)[count - 1] * quantity} kr/-</h2>
+            <h2>{price} kr/-</h2>
             <p>{targetProduct.desc}</p>
             {targetProduct.type === "meal" && <SizeOfMeal count={count} setCount={setCount}/>}
             {targetProduct.type === "drink" && <SizeOfDrink count={count} setCount={setCount}/>}
@@ -37,7 +46,12 @@ const Product = ({ targetProduct }) => {
                 ))}
                 </select>
             </div>
-            <button className={styles.addcartbtn}>Add to cart</button>
+            <button 
+              className={styles.addcartbtn}
+              onClick={handleAddCartBtn}
+            >
+              Add to cart
+            </button>
         </div>
     </div>
   )
