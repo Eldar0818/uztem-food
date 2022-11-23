@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from '../styles/cart/Cart.module.css'
 import Checkout from '../components/cart/Checkout'
 import CartItems from '../components/cart/CartItems'

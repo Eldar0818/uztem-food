@@ -3,12 +3,12 @@ import Product from "../../../models/Product"
 
 export default async function handler(req, res) {
     
-  dbConnect()
+  await dbConnect()
 
   if(req.method === "GET"){
     try {
       const allProducts = await Product.find()
-      res.status(201).json(allProducts)
+      res.status(200).json(allProducts)
     } catch (error) {
       res.status(500).json(error)
     }
@@ -17,9 +17,9 @@ export default async function handler(req, res) {
   if(req.method === "POST"){
     try {
       const newProduct = await Product.create(req.body)
-      return res.status(201).json(newProduct)
+       res.status(201).json(newProduct)
     } catch (error) {
-      return res.status(500).json(error)
+      res.status(500).json(error)
     }
   }  
 }

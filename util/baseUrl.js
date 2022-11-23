@@ -11,3 +11,11 @@ export const getAllProducts = async() => {
 export const getSingleProduct = async(id) => {
     return await apiUrl.get(`/products/${id}`)
 }
+
+export const createOrder = async(data) => {
+    return await apiUrl.post('/orders', data)
+}
+
+export const getOneOrder = async(id) => {
+    return await apiUrl.get(`/orders/${id}`)
+}

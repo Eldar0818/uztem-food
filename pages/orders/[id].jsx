@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import styles from '../../styles/Orders.module.css'
-import data from '../../components/dummyProducts.json'
+import { getOneOrder } from '../../util/baseUrl'
 
-const Orders = () => {
+const Orders = ({ singleOrder }) => {
 
-    const orderInfo = data.yourOrders
-    const [status, setStatus] = useState(0)
+    const status = singleOrder?.status
 
     const statusClasses = (index) => {
         if(index - status < 1) return styles.complete
@@ -27,16 +26,12 @@ const Orders = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        orderInfo?.map(order=> (
-                            <tr key={order.orderId}>
-                                <td>{order.orderId}</td>
-                                <td>{order.customer}</td>
-                                <td>{order.address}</td>
-                                <td>{order.total} kr</td>
-                            </tr>
-                        ))
-                    }
+                    <tr>
+                        <td>{singleOrder?._id}</td>
+                        <td>{singleOrder?.customer}</td>
+                        <td>{singleOrder?.address}</td>
+                        <td>{singleOrder?.total} kr</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -51,5 +46,14 @@ const Orders = () => {
     </div>
   )
 }
+
+export async function getServerSideProps({params}){
+    const response = await getOneOrder(params.id)
+    return{
+      props:{
+        singleOrder: response.data
+      }
+    }
+  }
 
 export default Orders

@@ -16,7 +16,11 @@ const OrderSchema = new mongoose.Schema({
     status: {
         type: Number,
         default: 0
+    },
+    method: {
+        type: Number,
+        required: true
     }
 }, {timestamps: true})
 
-export default mongoose.model.Order || mongoose.model("Order", OrderSchema)
+export default mongoose.models.Order || mongoose.model("Order", OrderSchema)
