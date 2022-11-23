@@ -5,16 +5,18 @@ import { createOrder } from '../../util/baseUrl';
 import { useRouter } from 'next/router';
 import { reset } from '../../redux/cartSlice'
 import ButtonWrapper from '../PaypalButton';
+import CashModal from '../CashModal';
 
 const Checkout = () => {
 
   const totalCost = useSelector(state => state.cart.total)
   const discount = totalCost > 350 ? 35 : 0
   const [checkoutClicked, setCheckoutClicked] = useState(false)
+  const [openCashModal, setOpenCashModal] = useState(false)
   const dispatch = useDispatch()
   const router = useRouter()
   
-    // This values are the props in the UI
+    // This values are the props in the UI for paypal
     const amount = totalCost-discount;
     const currency = "SEK";
     const style = {"layout":"vertical"};
@@ -51,6 +53,7 @@ const Checkout = () => {
                 />
              <button 
               className={styles.doorpaybtn}
+              onClick={() => setOpenCashModal(true)}
             >
               Cash on Delivery
              </button>
@@ -64,6 +67,12 @@ const Checkout = () => {
             </button>
           )
         }
+    {openCashModal && 
+    <CashModal 
+      amount={amount} 
+      makeAnOrder={makeAnOrder}
+      setOpenCashModal={setOpenCashModal}
+    />}
     </div>
   )
 }

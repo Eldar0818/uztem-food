@@ -10,7 +10,7 @@ const cart = () => {
             <CartItems />
         </div>
         <div className={styles.cartright}>
-            <Checkout /> 
+            <Checkout />
         </div>
     </div>
   )
