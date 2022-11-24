@@ -18,23 +18,13 @@
     color: #fff;
     letter-spacing: 1.1px;
 }
-
-.login{
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
+.orderscardbtn button{
+    width: 125px;
+    height: 35px;
+    background-color: orangered;
+    color: #fff;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-.loginicon{
-    color: #fff;
-    font-size: 25px;
-    margin-right: 5px;
-}
-
-.login span{
-    font-size: 18px;
-    color: #fff;
 }
 
 .navbottom{

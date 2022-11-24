@@ -19,3 +19,7 @@ export const createOrder = async(data) => {
 export const getOneOrder = async(id) => {
     return await apiUrl.get(`/orders/${id}`)
 }
+
+export const getAllOrders = async() => {
+    return await apiUrl.get('/orders')
+}

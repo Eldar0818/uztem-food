@@ -11,7 +11,7 @@ const Admin = () => {
 
                 <div className={styles.managementlink}>
                     <p>Manage all orders via click here</p>
-                    <Link href="/admin/orderslist">
+                    <Link href="/admin/ordermanage">
                         <button className={styles.managebtn}>Orders List</button>
                     </Link>
                 </div>
@@ -19,6 +19,12 @@ const Admin = () => {
                     <p>Manage all products via click here</p>
                     <Link href="/admin/productslist">
                         <button className={styles.managebtn}>Products List</button>
+                    </Link>
+                </div>
+                <div className={styles.managementlink}>
+                    <p>Manage all bookings via click here</p>
+                    <Link href="/admin/productslist">
+                        <button className={styles.managebtn}>Bookings List</button>
                     </Link>
                 </div>
 

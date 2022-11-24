@@ -6,7 +6,6 @@ const OrderListCard = ({setOpenOrderLinks, cardRef}) => {
 
   const [orderLinks, setOrderLinks] = useState([])
   
-
   useEffect(()=> {
     let orderInfoLinks = JSON.parse(localStorage.getItem("orders_history"))
     setOrderLinks(orderInfoLinks)

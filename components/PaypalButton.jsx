@@ -46,6 +46,7 @@ const ButtonWrapper = ({ currency, showSpinner, makeAnOrder, style, amount, prod
                 }}
                 onApprove={function (data, actions) {
                     return actions.order.capture().then(function (detail) {
+                        console.log(detail);
                         const shipping = detail.purchase_units[0].shipping
                         makeAnOrder({
                             customer: shipping.name.full_name,
