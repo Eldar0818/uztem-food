@@ -1,0 +1,56 @@
+.card{
+    max-width: 350px;
+    width: 100%;
+    min-height: 350px;
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    z-index: 999;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 10px;
+}
+
+.cardheading{
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #333;
+    font-size: 20px;
+}
+
+.itemrow{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: orange;
+}
+
+.itemrow:hover {
+    background-color: orangered;
+}
+
+.carditems{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardtexts{
+    display: flex;
+   align-items: center;
+}
+
+.cardtexts span{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.cardtotal{
+    color: #fff;
+    font-size: 15px;
+}

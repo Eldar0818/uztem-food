@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/cart/Cart.module.css'
 
-const CashModal = ({amount, makeAnOrder, setOpenCashModal}) => {
+const CashModal = ({amount, makeAnOrder, setOpenCashModal, productDetails}) => {
 
     const [customer, setCustomer] = useState("")
     const [address, setAddress] = useState("")
@@ -12,16 +12,20 @@ const CashModal = ({amount, makeAnOrder, setOpenCashModal}) => {
             customer: customer,
             address: address,
             total: amount,
+            productInfo: productDetails,
             phone: phone,
             status: 0,
             method: 0
           })
+          setTimeout(()=> {
+              setOpenCashModal(false)
+          }, 500)
     }
 
   return (
     <div className={styles.modaloverlay}>
         <div className={styles.modalbody}>
-            <h3>You have to pay {amount} kr after delivery.</h3>
+            <h3>You have to pay {amount} kr on your doorstep.</h3>
             <div className={styles.inputs}>
                 <label htmlFor="fullname">Full name:</label>
                 <input 
@@ -55,7 +59,7 @@ const CashModal = ({amount, makeAnOrder, setOpenCashModal}) => {
                     className={styles.cancelbtn}
                     onClick={()=> setOpenCashModal(false)}
                 >
-                    Cancle
+                    Cancel
                 </button>
             </div>
         </div>

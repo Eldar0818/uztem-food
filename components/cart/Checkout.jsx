@@ -2,32 +2,38 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../styles/cart/Cart.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { createOrder } from '../../util/baseUrl';
-import { useRouter } from 'next/router';
 import { reset } from '../../redux/cartSlice'
 import ButtonWrapper from '../PaypalButton';
 import CashModal from '../CashModal';
 
 const Checkout = () => {
 
+  const cartList = useSelector(state => state.cart.products)
   const totalCost = useSelector(state => state.cart.total)
   const discount = totalCost > 350 ? 35 : 0
   const [checkoutClicked, setCheckoutClicked] = useState(false)
   const [openCashModal, setOpenCashModal] = useState(false)
+  const [storageItems, setStorageItems] = useState([])
   const dispatch = useDispatch()
-  const router = useRouter()
   
-    // This values are the props in the UI for paypal
+    // This values are the props in the UI for paypal and cash as well
     const amount = totalCost-discount;
     const currency = "SEK";
     const style = {"layout":"vertical"};
+
+    const productDetails = cartList?.map(pd => [pd.name, pd.quantity])
+    useEffect(() => {
+       setStorageItems(JSON.parse(localStorage.getItem("orders_history")) || [])
+    }, [])
 
     const makeAnOrder = async (data) => {
       try {
         const response = await createOrder(data)
         if(response.status === 201){
-          router.push(`/orders/${response.data._id}`)
+          localStorage.setItem("orders_history", JSON.stringify([...storageItems ,response.data]))
         }
         dispatch(reset())
+        setCheckoutClicked(false)
       } catch (error) {
         console.log(error);
       }
@@ -50,6 +56,7 @@ const Checkout = () => {
                   makeAnOrder={makeAnOrder}
                   style={style}
                   amount={amount}
+                  productDetails={productDetails}
                 />
              <button 
               className={styles.doorpaybtn}
@@ -62,6 +69,7 @@ const Checkout = () => {
             <button 
               className={styles.checkoutbtn}
               onClick={() => setCheckoutClicked(true)}
+              disabled={cartList?.length < 1}
             >
               Checkout
             </button>
@@ -72,6 +80,7 @@ const Checkout = () => {
       amount={amount} 
       makeAnOrder={makeAnOrder}
       setOpenCashModal={setOpenCashModal}
+      productDetails={productDetails}
     />}
     </div>
   )

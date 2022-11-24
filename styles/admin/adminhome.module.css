@@ -1,0 +1,52 @@
+.adminhome{
+    width: 100%;
+    min-height: calc(100vh - 300px);
+}
+
+.adminwrap{
+    max-width: 1024px;
+    width: 100%;
+    padding: 45px 15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    margin: 25px auto;
+}
+
+.adminwrap h3{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.managmentparts{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 45px 0;
+}
+
+.managementlink{
+    max-width: 375px;
+    width: 100%;
+    background-color: orange;
+    padding: 45px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.managementlink p{
+    font-size: 21px;
+    color: #fff;
+    margin-bottom: 45px;
+}
+
+.managebtn{
+    background-color: orangered;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    width: 125px;
+    height: 35px;
+    border-radius: 5px;
+}

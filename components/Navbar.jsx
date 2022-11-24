@@ -1,16 +1,19 @@
 import Image from 'next/legacy/image'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from '../styles/Navbar.module.css'
-import { FaRegUserCircle, FaRegTimesCircle } from 'react-icons/fa'
+import { FaRegTimesCircle } from 'react-icons/fa'
 import { BsBasket2Fill } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
+import OrderListCard from './OrderListCard'
 
 const Navbar = () => {
 
     const [clickMenu, setClickMenu] = useState(false)
+    const [openOrderLinks, setOpenOrderLinks] = useState(false)
+    const cardRef = useRef(null)
     const router = useRouter()
     const itemsNumber = useSelector(state => state.cart.itemsNumber)
 
@@ -25,17 +28,17 @@ const Navbar = () => {
             }
         })
     }, [])
-
+    
   return (
     <nav className={styles.navbar}>
         <section className={styles.navtop}>
             <div />
             <p className={styles.navtopremider}>Online order - Free delivery</p>
-            <div className={styles.login}>
-                <FaRegUserCircle className={styles.loginicon}/>
-                <span>Log in</span>
+            <div className={styles.orderscardbtn}>
+              <button onClick={() => setOpenOrderLinks(true)}>Your Orders</button>
             </div>
         </section>
+        {openOrderLinks && <OrderListCard setOpenOrderLinks={setOpenOrderLinks} cardRef={cardRef} /> }
         <section className={styles.navbottom}>
                 <div className={styles.logo}>
             <Link href="/">

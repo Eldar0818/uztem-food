@@ -37,7 +37,9 @@ const Orders = ({ singleOrder }) => {
         </div>
 
        <div className={styles.statusbox}>
-            <span className={statusClasses(0)}>Payed Successfully!</span>
+            <span className={statusClasses(0)}>
+              {singleOrder?.method === 0 ? "Order recieved!" : "Payed Successfully!"}
+            </span>
             <span className={statusClasses(1)}>Preparing!</span>
             <span className={statusClasses(2)}>On the way!</span>
             <span className={statusClasses(3)}>Delivered!</span>

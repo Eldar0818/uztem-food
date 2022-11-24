@@ -13,7 +13,7 @@ const Footer = () => {
           <p>Email: uztem1020@gmail.com</p>
         </div>
         <div className={styles.footerinfo}>
-          <p>Adress: Almbygatan 14 Spånga, Stockholm</p>
+          <p>Address: Almbygatan 14 Spånga, Stockholm</p>
           <p>Opening hours: Monday-Friday 09:00-21:00, Saturday-Sunday 10:00-20:30</p>
         </div>
       </div>

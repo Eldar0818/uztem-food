@@ -4,7 +4,7 @@ import {
     usePayPalScriptReducer
   } from "@paypal/react-paypal-js";
 
-const ButtonWrapper = ({ currency, showSpinner, makeAnOrder, style, amount }) => {
+const ButtonWrapper = ({ currency, showSpinner, makeAnOrder, style, amount, productDetails }) => {
     // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
     // This is the main reason to wrap the PayPalButtons in a new component
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
@@ -51,6 +51,7 @@ const ButtonWrapper = ({ currency, showSpinner, makeAnOrder, style, amount }) =>
                             customer: shipping.name.full_name,
                             address: shipping.address.address_line_1,
                             total: amount,
+                            productInfo: productDetails,
                             status: 0,
                             method: 1
                           })

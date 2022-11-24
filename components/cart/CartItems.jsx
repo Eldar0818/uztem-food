@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 const CartItems = () => {
 
     const cartItems = useSelector((state) => state.cart.products)
-    const totalPrice = useSelector((state) => state.cart.total)
 
     const sizeTexts = [
         {id: 1, text: '(small)'},
