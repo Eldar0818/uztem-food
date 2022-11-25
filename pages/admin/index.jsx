@@ -17,13 +17,13 @@ const Admin = () => {
                 </div>
                 <div className={styles.managementlink}>
                     <p>Manage all products via click here</p>
-                    <Link href="/admin/productslist">
+                    <Link href="/admin/productmanage">
                         <button className={styles.managebtn}>Products List</button>
                     </Link>
                 </div>
                 <div className={styles.managementlink}>
                     <p>Manage all bookings via click here</p>
-                    <Link href="/admin/productslist">
+                    <Link href="/admin/bookingmanage">
                         <button className={styles.managebtn}>Bookings List</button>
                     </Link>
                 </div>
