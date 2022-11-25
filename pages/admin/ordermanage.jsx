@@ -1,18 +1,43 @@
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import OrderlistItems from '../../components/admins/OrderlistItems';
 import styles from '../../styles/admin/ordermanage.module.css'
-import { getAllOrders } from '../../util/baseUrl'
+import { getAllOrders, deleteOneOrder, updateStatus } from '../../util/baseUrl'
 
-const Ordermanage = ({ordersList}) => {
+const Ordermanage = ({ allorders }) => {
 
-    console.log(ordersList);
+    const [ordersList, setOrdersList] = useState(allorders)
+
     const statusTexts = [
         {text: "Order made", statusId: 0},
         {text: "Preparing", statusId: 1},
         {text: "On the way", statusId: 2},
         {text: "Delivered", statusId: 3},
     ]
+
+    const handleDeleteOrder = async(id) => {
+        try {
+            await deleteOneOrder(id)
+            setOrdersList(ordersList.filter(list => list._id !== id))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleStatus = async(id) => {
+        const item = ordersList?.filter(order => order._id === id)[0]
+        const currentStatus = item.status
+        let info = {status: currentStatus + 1}
+        try {
+            const response = await updateStatus(id, info)
+            setOrdersList([
+                response.data,
+                ...ordersList.filter(order => order._id !== id)
+            ])
+        } catch (error) {
+            console.log(error);    
+        }
+    }
 
   return (
     <div className={styles.managepage}>
@@ -28,6 +53,8 @@ const Ordermanage = ({ordersList}) => {
                             key={item._id} 
                             item={item} 
                             statusTexts={statusTexts}
+                            deleteFunc={handleDeleteOrder}
+                            nextStep={handleStatus}
                         />
                     ))
                 }
@@ -41,7 +68,7 @@ export async function getServerSideProps(){
     const response = await getAllOrders()
     return{
         props: {
-            ordersList: response.data
+            allorders:  response.data
         }
     }
 }

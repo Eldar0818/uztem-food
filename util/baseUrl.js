@@ -23,3 +23,11 @@ export const getOneOrder = async(id) => {
 export const getAllOrders = async() => {
     return await apiUrl.get('/orders')
 }
+
+export const updateStatus = async(id, info) => {
+    return await apiUrl.put(`/orders/${id}`, info)
+}
+
+export const deleteOneOrder = async(id) => {
+    return await apiUrl.delete(`/orders/${id}`)
+}

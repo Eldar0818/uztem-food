@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from '../../styles/admin/ordermanage.module.css'
 
-const OrderlistItems = ({item, statusTexts}) => {
+const OrderlistItems = ({item, statusTexts, deleteFunc, nextStep}) => {
+
   return (
     <div className={styles.listitem}>
         <h4 className={styles.totalcost}>Total cost: {item.total} kr</h4>
@@ -17,11 +18,19 @@ const OrderlistItems = ({item, statusTexts}) => {
             <span>Customer: {item.customer}</span>
             <span>Payment: {item.method === 1 ? "Paied" : "Unpaied"}</span>
             <span>OrderId: {item._id}</span>
-            <button>Cancel</button>
+            <button
+                onClick={() => deleteFunc(item._id)}
+            >
+                Cancel
+            </button>
         </div>
         <div className={styles.itembottom}>
             <p>Status: {statusTexts.filter(text=> text.statusId === item.status + 1)[0].text}</p>
-            <button>Next step</button>
+            <button
+                onClick={() => nextStep(item._id)}
+            >
+                Next step
+            </button>
         </div>
     </div>
   )

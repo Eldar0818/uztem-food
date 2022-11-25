@@ -13,6 +13,24 @@ async function handler(req, res) {
             res.status(500).json(error)
         }
     }
+
+    if(req.method === "PUT"){
+        try {
+            const updatedData = await Order.findByIdAndUpdate(req.query.id, req.body, {new: true})
+            res.status(201).json(updatedData)
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    }
+
+    if(req.method === "DELETE"){
+        try {
+            await Order.findByIdAndDelete(req.query.id)
+            res.status(200).json("The order has been cancled")
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    }
 }
 
 export default handler
