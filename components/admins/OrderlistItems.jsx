@@ -25,9 +25,10 @@ const OrderlistItems = ({item, statusTexts, deleteFunc, nextStep}) => {
             </button>
         </div>
         <div className={styles.itembottom}>
-            <p>Status: {statusTexts.filter(text=> text.statusId === item.status + 1)[0].text}</p>
+            <p>Status: {statusTexts.filter(text=> text.statusId === item.status)[0].text}</p>
             <button
                 onClick={() => nextStep(item._id)}
+                disabled={item.status === 3}
             >
                 Next step
             </button>

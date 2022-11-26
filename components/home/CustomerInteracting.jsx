@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/home/interacting.module.css'
 import { MdDeliveryDining } from 'react-icons/md'
+import Link from 'next/link'
 
 const CustomerInteracting = () => {
 
@@ -13,11 +14,13 @@ const CustomerInteracting = () => {
             <h2>Fest Delivery</h2>
             <p>Order online easily.</p>
             <p>Delicious meal is comming to your home.</p>
+            <Link href="/ordernow">
               <button 
                 className={styles.oredrbtn}
-              >
+                >
                 Order Now
               </button>
+            </Link>
           </div>
         </div>
       </div>
