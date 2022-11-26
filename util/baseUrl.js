@@ -31,3 +31,7 @@ export const updateStatus = async(id, info) => {
 export const deleteOneOrder = async(id) => {
     return await apiUrl.delete(`/orders/${id}`)
 }
+
+export const adminLogin = async(info) => {
+    return await apiUrl.post('/login', info)
+}

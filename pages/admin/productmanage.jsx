@@ -66,7 +66,18 @@ const Productmanage = ({allProducts}) => {
   )
 }
 
-export async function getServerSideProps(){
+export async function getServerSideProps(ctx){
+
+    const myCookie = ctx.req?.cookies || ""
+    if(myCookie.token !== process.env.TOKEN){
+        return{
+            redirect: {
+                destination: "/admin/login",
+                permanent: false
+            }
+        }
+    }
+
     const response = await getAllProducts()
     return{
       props:{
