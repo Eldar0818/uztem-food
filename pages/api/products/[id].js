@@ -14,4 +14,13 @@ export default async function handler(req, res) {
     }
   }
 
+  if(req.method === "DELETE"){
+    try {
+      await Product.findByIdAndDelete(req.query.id)
+      res.status(200).json("Product has been deleted!")
+    } catch (error) {
+      res.status(500).json(error)
+    }
+  }
+
 }

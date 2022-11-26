@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import AddProductForm from '../../components/admins/AddProductForm'
 import ProductListItems from '../../components/admins/ProductListItems'
 import styles from '../../styles/admin/productmanage.module.css'
-import { getAllProducts } from '../../util/baseUrl'
+import { getAllProducts, deleteProduct } from '../../util/baseUrl'
 import { addFormStyles } from '../../components/admins/AddformAnimation'
 import { BsPlusLg } from 'react-icons/bs'
 
@@ -11,14 +11,25 @@ const Productmanage = ({allProducts}) => {
 
     const [openAddForm, setOpenAddForm] = useState(false)
     const [filterInputs, setFilterInputs] = useState("")
+    const [productItems, setProductItems] = useState(allProducts)
 
-    const filteredItems = allProducts?.filter(products => {
+    const filteredItems = productItems?.filter(products => {
         if(filterInputs === ""){
             return products
         }else{
             return products.type === filterInputs
         }
     })
+
+    
+    const handleDeleteProduct = async(id) => {
+       try {
+        await deleteProduct(id)
+        setProductItems(productItems.filter(item=> item._id !== id))
+       } catch (error) {
+        console.log(error);
+       }
+    }
 
   return (
     <div className={styles.managepage}>
@@ -41,13 +52,16 @@ const Productmanage = ({allProducts}) => {
             </div>
             <div className={styles.wrapper}>
                 <div style={addFormStyles(openAddForm)}>
-                    <AddProductForm/>
+                    <AddProductForm
+                        setOpenAddForm={setOpenAddForm}
+                    />
                 </div>
                 <div className={styles.allproducts}>
                     {filteredItems.map(product => (
                         <ProductListItems
                             key={product._id}
                             product={product}
+                            deleteFunc={handleDeleteProduct}
                         />
                     ))}
                 </div>

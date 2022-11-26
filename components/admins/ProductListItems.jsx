@@ -2,7 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../../styles/admin/productmanage.module.css'
 
-const ProductListItems = ({ product }) => {
+const ProductListItems = ({ product, deleteFunc }) => {
+
   return (
     <div className={styles.listitem}>
         <div className={styles.imgae}>
@@ -22,8 +23,12 @@ const ProductListItems = ({ product }) => {
             <p>{product.desc}</p>
         </div>
         <div className={styles.listcontrol}>
-            <button className={styles.editbtn}>Edit</button>
-            <button className={styles.deletebtn}>Delete</button>
+            <button 
+                className={styles.deletebtn}
+                onClick={() => deleteFunc(product._id)}    
+            >
+                Delete
+            </button>
         </div>
     </div>
   )

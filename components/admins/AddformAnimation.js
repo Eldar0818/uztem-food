@@ -1,6 +1,6 @@
 export const addFormStyles = (open) => {
     return{
-        maxWidth: '400px',
+        maxWidth: '545px',
         width: '100%',
         position: 'fixed',
         top: '125px',
