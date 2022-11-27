@@ -27,8 +27,8 @@ const CartItems = () => {
         </thead>
         <tbody>
             {
-                cartItems?.map(item=> (
-                    <tr key={item._id}>
+                cartItems?.map((item, index)=> (
+                    <tr key={index}>
                         <td>
                             <Image
                                 src={item.image}

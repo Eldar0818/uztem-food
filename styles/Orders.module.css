@@ -24,24 +24,31 @@
 .statusbox{
     margin: 25px 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
 }
 
-.statusbox span{
+.statusbox div{
     font-size: 25px;
     font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .uncomplete{
     color: #7c7c7c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .inprogress{
     color: orangered;
     text-decoration: underline;
     animation: inProgress 1s ease infinite alternate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes inProgress {
@@ -55,4 +62,31 @@
 
 .complete{
     color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.invalidirder{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 25px;
+    color: orangered;
+    letter-spacing: 1.1px;
+}
+
+@media screen and (max-width: 1024px) {
+    .statusbox{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .orderspage{
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 528px) {
+    .statusbox{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 5px;
+    }
 }

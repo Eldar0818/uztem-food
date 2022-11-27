@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from '../../styles/Orders.module.css'
 import { getOneOrder } from '../../util/baseUrl'
+import { BsFillCheckCircleFill } from 'react-icons/bs'
 
 const Orders = ({ singleOrder }) => {
 
@@ -19,7 +20,6 @@ const Orders = ({ singleOrder }) => {
             <table>
                 <thead>
                     <tr>
-                        <th>OrderId: </th>
                         <th>Cutomer: </th>
                         <th>Address: </th>
                         <th>Total: </th>
@@ -27,7 +27,6 @@ const Orders = ({ singleOrder }) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{singleOrder?._id}</td>
                         <td>{singleOrder?.customer}</td>
                         <td>{singleOrder?.address}</td>
                         <td>{singleOrder?.total} kr</td>
@@ -38,14 +37,26 @@ const Orders = ({ singleOrder }) => {
 
         {singleOrder ?  (
          <div className={styles.statusbox}>
-              <span className={statusClasses(0)}>
+            <div className={statusClasses(0)}>
+              <span>
                 {singleOrder?.method === 0 ? "Order recieved!" : "Payed Successfully!"}
               </span>
-              <span className={statusClasses(1)}>Preparing!</span>
-              <span className={statusClasses(2)}>On the way!</span>
-              <span className={statusClasses(3)}>Delivered!</span>
+              <BsFillCheckCircleFill fontSize={25}/>
+            </div>
+            <div className={statusClasses(1)}>
+              <span >Preparing!</span>
+              <BsFillCheckCircleFill fontSize={25}/>
+            </div>
+            <div className={statusClasses(2)}>
+              <span >On the way!</span>
+              <BsFillCheckCircleFill fontSize={25}/>
+            </div>
+            <div className={statusClasses(3)}>
+              <span>Delivered!</span>
+              <BsFillCheckCircleFill fontSize={25}/>
+            </div>
           </div>
-            ) : (<p>This order no longer be valid!</p>)}
+            ) : (<p className={styles.invalidirder}>This order no longer be valid!</p>)}
 
     </div>
   )
