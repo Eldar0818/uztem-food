@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiUrl = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_KEY_PRODUCTTION
+    baseURL: "https://uztem.netlify.app/api"
 })
 
 const cloudinaryApi = "https://api.cloudinary.com/v1_1/dewybyk8a/image/upload"
