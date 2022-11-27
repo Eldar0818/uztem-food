@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/Footer.module.css'
 import { AiFillFacebook } from 'react-icons/ai'
 import { FaInstagramSquare } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -22,18 +23,22 @@ const Footer = () => {
           <p>&copy; 2022 uztem, all rights reserved.</p>
         </div>
         <div className={styles.footericons}>
-          <AiFillFacebook 
-            color='#fff' 
-            fontSize={25} 
-            cursor="pointer"
-            style={{ margin: '0 15px' }}
-          />
-          <FaInstagramSquare 
-            color='#fff' 
-            fontSize={25} 
-            cursor="pointer"
-            style={{ margin: '0 15px' }}
-          />
+          <Link href="https://www.facebook.com/" target="_blank">
+            <AiFillFacebook 
+              color='#fff' 
+              fontSize={25} 
+              cursor="pointer"
+              style={{ margin: '0 15px' }}
+            />
+          </Link>
+          <Link href="https://www.instagram.com/" target="_blank">
+            <FaInstagramSquare
+              color='#fff' 
+              fontSize={25} 
+              cursor="pointer"
+              style={{ margin: '0 15px' }}
+              />
+          </Link>
         </div>
       </div>
     </div>
