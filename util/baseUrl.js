@@ -49,3 +49,11 @@ export const adminLogin = async(info) => {
 export const cloudinaryUpload = async(data) => {
     return await axios.post(cloudinaryApi, data)
 }
+
+export const makeBooking = async(data) => {
+    return await apiUrl.post('/bookings', data)
+}
+
+export const getAllBookings = async() => {
+    return await apiUrl.get('/bookings')
+}
