@@ -18,7 +18,7 @@ const Gallery = () => {
             {
                 galleryimgs.map(img => (
                     <div key={img.id} className={styles.galleryimg}>
-                        <Image src={img.uri} alt="" layout='fill' />
+                        <Image src={img.uri} alt="assets" layout='fill' />
                     </div>
                 ))
             }

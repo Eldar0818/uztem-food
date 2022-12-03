@@ -33,6 +33,15 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-### target website url
+### Target website url
 
-https://www.wix.com/website/templates/?criteria=Restaurant+Supply+Store&page=3
+https://uztem-food.vercel.app/
+
+### Admin panel
+
+enter /admin after main url will be redirect to the /admin/login
+
+test account 
+
+username: admin01
+password: admin123456
