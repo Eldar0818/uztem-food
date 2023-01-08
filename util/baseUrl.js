@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiUrl = axios.create({
-    baseURL: "https://uztem.vercel.app/api"
+    baseURL: "https://uztem-food.vercel.app/api"
 })
 
 const cloudinaryApi = "https://api.cloudinary.com/v1_1/dewybyk8a/image/upload"
